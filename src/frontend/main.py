@@ -13,21 +13,15 @@ root.title("WinFlex")
 tabview = ctk.CTkTabview(root)
 tabview.pack(expand=True, fill="both")
 
-tabview.add("Frame 1")
-tabview.add("Frame 2")
+tabview.add("Explore")
+tabview.add("Installed")
 
-frame1 = ctk.CTkFrame(tabview.tab("Frame 1"))
+frame1 = ctk.CTkFrame(tabview.tab("Explore"))
 frame1.pack(fill="both", expand=True, padx=10, pady=10)
 
-frame2 = ctk.CTkFrame(tabview.tab("Frame 2"))
+frame2 = ctk.CTkFrame(tabview.tab("Installed"))
 frame2.pack(fill="both", expand=True, padx=10, pady=10)
 
-icon_path = "icon.png"
-if not os.path.exists(icon_path):
-    print(f"Файл {icon_path} не знайдено! Переконайтеся, що він у правильній папці.")
-    icon = None
-else:
-    icon = ctk.CTkImage(dark_image=Image.open(icon_path), size=(40, 40))
 
 def create_tile(parent, title, description):
     tile = ctk.CTkFrame(parent, corner_radius=10)
