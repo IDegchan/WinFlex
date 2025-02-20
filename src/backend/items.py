@@ -48,6 +48,7 @@ shop_items = load_items_from_json("../items.json")
 for item in shop_items:
     print("\n" + "-" * 50)
     print(f"Використовую: {item.name}")
+    print(f"{item.description}")
     print(f"{item.prog_dir}")
     print(f"{item.file_path}")
     print(f"{item.content}")
