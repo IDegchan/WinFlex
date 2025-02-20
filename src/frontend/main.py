@@ -39,7 +39,7 @@ def create_tile(parent, title, description):
     desc_label = ctk.CTkLabel(tile, text=description, font=("Arial", 12), wraplength=350)
     desc_label.pack(anchor="w", padx=10)
 
-    action_button = ctk.CTkButton(tile, text="Налаштувати", image=icon, compound="left")
+    action_button = ctk.CTkButton(tile, text="Завантажити", image=icon, compound="left")
     action_button.pack(pady=10, padx=10, anchor="e")
 
 create_tile(frame1, "Тема оформлення", "Змінити колірну схему Windows.")
