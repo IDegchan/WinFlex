@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Редактор Конфігів",
+        "description": "Змінює або створює конфігураційний файл.",
+        "type": "file_handler",
+        "file_path": "config.txt",
+        "content": "Новий конфіг!",
+        "program_directory": "../"
+    }
+]
