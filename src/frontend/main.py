@@ -1,6 +1,7 @@
 import customtkinter as ctk
 
 root = ctk.CTk()
+root.title("WinFlex")
 
 tabview = ctk.CTkTabview(root)
 tabview.pack(expand=True, fill="both")
