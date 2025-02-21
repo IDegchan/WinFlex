@@ -41,3 +41,4 @@ create_tile(frame1, "Іконки", "Налаштування системних
 create_tile(frame1, "Анімації", "Управління анімаціями Windows.")
 
 root.mainloop()
+ 
