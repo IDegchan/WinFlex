@@ -6,7 +6,7 @@ class Highlight:
         self.g = green
         self.b = blue
 
-    def change_highlight_color(self):
+    def change(self):
         red = self.r
         if red > 20: red -= 20
         else: red = 1
@@ -37,4 +37,4 @@ class Highlight:
         
         os.system("RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters")
 
-#os.system("shutdown -r -t 0")
+Highlight(0, 255, 115).change()
