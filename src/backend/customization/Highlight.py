@@ -37,4 +37,4 @@ class Highlight:
         
         os.system("RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters")
 
-Highlight(0, 255, 115).change()
+if __name__ == "__main__": Highlight(0, 255, 115).change()
