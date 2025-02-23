@@ -1,6 +1,5 @@
 import os
 import customtkinter as ctk
-from PIL import Image
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -12,15 +11,14 @@ root.title("WinFlex")
 
 tabview = ctk.CTkTabview(root)
 tabview.pack(expand=True, fill="both")
-
 tabview.add("Explore")
-tabview.add("Installed")
+tabview.add("Settings")
 
-frame1 = ctk.CTkFrame(tabview.tab("Explore"))
-frame1.pack(fill="both", expand=True, padx=10, pady=10)
+Explore = ctk.CTkFrame(tabview.tab("Explore"))
+Explore.pack(fill="both", expand=True, padx=10, pady=10)
 
-frame2 = ctk.CTkFrame(tabview.tab("Installed"))
-frame2.pack(fill="both", expand=True, padx=10, pady=10)
+Settings = ctk.CTkFrame(tabview.tab("Settings"))
+Settings.pack(fill="both", expand=True, padx=10, pady=10)
 
 
 def create_tile(parent, title, description):
@@ -36,9 +34,8 @@ def create_tile(parent, title, description):
     action_button = ctk.CTkButton(tile, text="Завантажити", compound="left")
     action_button.pack(pady=10, padx=10, anchor="e")
 
-create_tile(frame1, "Тема оформлення", "Змінити колірну схему Windows.")
-create_tile(frame1, "Іконки", "Налаштування системних іконок.")
-create_tile(frame1, "Анімації", "Управління анімаціями Windows.")
+create_tile(Explore, "Тема оформлення", "Змінити колірну схему Windows.")
+create_tile(Explore, "Іконки", "Налаштування системних іконок.")
+create_tile(Explore, "Анімації", "Управління анімаціями Windows.")
 
 root.mainloop()
- 
