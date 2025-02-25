@@ -32,4 +32,4 @@ class Highlight(Tool):
         self._set_color("HotTrackingColor", self.DEFAULT_HOTTRACK)
 
 if __name__ == "__main__":
-    Highlight(0, 255, 115).change()
+    Highlight(0, 125, 35).change()
