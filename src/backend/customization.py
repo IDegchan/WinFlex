@@ -2,11 +2,8 @@ import winreg
 import os
 
 class Tool:
-    def __init__(self):
-        pass
-    
-    def function():
-        pass
+    def __init__(self): pass
+    def function(): pass
 
 class Highlight(Tool):
     DEFAULT_HILIGHT = "0 120 215"
