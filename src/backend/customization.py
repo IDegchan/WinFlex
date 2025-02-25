@@ -1,7 +1,14 @@
 import winreg
 import os
 
-class Highlight:
+class Tool:
+    def __init__(self):
+        pass
+    
+    def function():
+        pass
+
+class Highlight(Tool):
     DEFAULT_HILIGHT = "0 120 215"
     DEFAULT_HOTTRACK = "0 102 204"
     REG_PATH = r"Control Panel\Colors"
