@@ -48,8 +48,6 @@ class Console(Tool):
         self.run_command("irm get.scoop.sh | iex")
         self.run_command("scoop install winfetch")
 
-        
-
 if __name__ == "__main__":
     # Highlight(0, 125, 35).change()
     Console()
