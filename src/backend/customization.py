@@ -38,7 +38,7 @@ class Console(Tool):
     WINDOWSTERMINALPATH = next(Tool.HOME.glob("AppData/Local/Packages/Microsoft.WindowsTerminal*/LocalState/settings.json"))
 
     def __init__(self):
-        with open(self.WINDOWSTERMINALPATH) as file:
+        with open(self.POWERSHELLPROFILEPATH) as file:
             print(file.read())
     
     def init(self):
