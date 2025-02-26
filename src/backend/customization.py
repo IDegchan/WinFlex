@@ -4,6 +4,7 @@ import os
 
 class Tool:
     HOME = Path.home()
+    FILEPATH = Path(__file__).resolve().parent
 
     def __init__(self): pass
 
