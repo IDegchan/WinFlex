@@ -23,11 +23,6 @@ if %errorlevel% == 0 (
 echo Restarting explorer
 taskkill /F /IM explorer.exe >nul
 start explorer.exe
-echo .
-echo title Success
-echo Changes applied successfully
-echo You can now close this window, it will close automatically in 5 seconds
-timeout /t 5 >nul
 exit /b 0
 
 :isAdmin
