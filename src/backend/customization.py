@@ -31,8 +31,8 @@ class Highlight(Tool):
         self._set_color("HotTrackingColor", self.DEFAULT_HOTTRACK)
 
 class Console(Tool):
-    POWERSHELLPROFILEPATH = Tool.HOME / "Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
-    WINDOWSTERMINALPATH = next(Tool.HOME.glob("AppData/Local/Packages/Microsoft.WindowsTerminal*/LocalState/settings.json"), None)
+    POWERSHELL_PROFILE_PATH = Tool.HOME / "Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
+    WINDOWS_TERMINAL_PATH = next(Tool.HOME.glob("AppData/Local/Packages/Microsoft.WindowsTerminal*/LocalState/settings.json"), None)
 
     def __init__(self):
         with open(self.POWERSHELLPROFILEPATH) as file:
