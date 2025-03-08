@@ -1,5 +1,4 @@
 from pathlib import Path
-from multiprocessing import Process
 import subprocess
 import winreg
 
@@ -40,3 +39,7 @@ class Console(Tool):
         self.run_command("winget install --id Microsoft.Powershell --source winget")
         self.run_command("irm get.scoop.sh | iex")
         self.run_command("scoop install winfetch")
+
+        with open("/progs/Console/Microsoft.PowerShell_profile.ps1", "r", encoding="utf-8") as readable_file:
+            with open(self.POWERSHELL_PROFILE_PATH, "w", encoding="utf-8") as writable_file:
+                writable_file.write(readable_file.read())
