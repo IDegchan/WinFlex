@@ -25,6 +25,8 @@ def create_tile(parent, title, description, btn_text, function):
     Buttons.append(ctk.CTkButton(tile, text=btn_text, compound="left", command=function))
     Buttons[-1].pack(pady=10, padx=10, anchor="e")
 
+def _init_console(): Console().init()
+
 def Theme_func():
     pass
 
@@ -32,14 +34,13 @@ def Explorer_func():
     pass
 
 def Console_func():
-    Buttons[-1].configure(text="...")
-    Console().init()
-    print(Buttons[-1]._text)
-    Buttons[-1].configure(text="Ініціалізувати")
-    Buttons[-1].configure(state="Disabled")
+    Buttons[-1].configure(state = 'disabled')
+    p = Process(name="Initialize console", target=_init_console)
+    p.start()
 
 create_tile(root, "Тема оформлення", "Змінити колірну схему оформлення", "Налаштувати", Theme_func)
 create_tile(root, "Провідник", "Mica блюр для Windows Explorer", "Ініціалізувати", Explorer_func)
 create_tile(root, "Консоль", "Кастомізувати консоль", "Ініціалізувати", Console_func)
 
-root.mainloop()
+if __name__ == "__main__":
+    root.mainloop()

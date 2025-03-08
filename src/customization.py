@@ -40,6 +40,12 @@ class Console(Tool):
         self.run_command("irm get.scoop.sh | iex")
         self.run_command("scoop install winfetch")
 
-        with open("/progs/Console/Microsoft.PowerShell_profile.ps1", "r", encoding="utf-8") as readable_file:
+        with open("src\\progs\\Console\\settings.json", "r", encoding="utf-8") as readable_file:
+            with open(self.WINDOWS_TERMINAL_PATH, "w", encoding="utf-8") as writable_file:
+                writable_file.write(readable_file.read())
+
+        with open("src\\progs\\Console\\Microsoft.PowerShell_profile.ps1", "r", encoding="utf-8") as readable_file:
             with open(self.POWERSHELL_PROFILE_PATH, "w", encoding="utf-8") as writable_file:
                 writable_file.write(readable_file.read())
+
+        self.run_command("wt")
