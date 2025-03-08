@@ -38,7 +38,7 @@ def Console_func():
     p = Process(name="Initialize console", target=_init_console)
     p.start()
 
-create_tile(root, "Тема оформлення", "Змінити колірну схему оформлення", "Налаштувати", Theme_func)
+create_tile(root, "Колір виділення тексту", "Змінити колір виділення тексту", "Налаштувати", Theme_func)
 create_tile(root, "Провідник", "Mica блюр для Windows Explorer", "Ініціалізувати", Explorer_func)
 create_tile(root, "Консоль", "Кастомізувати консоль", "Ініціалізувати", Console_func)
 
