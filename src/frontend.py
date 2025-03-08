@@ -11,7 +11,7 @@ root.geometry("1000x650")
 root.minsize(800, 500)
 root.title("WinFlex")
 
-def create_tile(parent, title, description, function):
+def create_tile(parent, title, description, btn_text, function):
     tile = ctk.CTkFrame(parent, corner_radius=10)
     tile.pack(pady=10, padx=10, fill="x")
 
@@ -21,11 +21,20 @@ def create_tile(parent, title, description, function):
     desc_label = ctk.CTkLabel(tile, text=description, font=("Arial", 12), wraplength=350)
     desc_label.pack(anchor="w", padx=10)
 
-    Buttons.append(ctk.CTkButton(tile, text="Налаштувати", compound="left", command=function))
+    Buttons.append(ctk.CTkButton(tile, text=btn_text, compound="left", command=function))
     Buttons[-1].pack(pady=10, padx=10, anchor="e")
 
-create_tile(root, "Тема оформлення", "Змінити колірну схему оформлення", lambda: print("HELLO"))
-create_tile(root, "Провідник", "Mica блюр для Windows Explorer", lambda: print("HELL0"))
-create_tile(root, "Консоль", "Кастомізувати консоль", lambda: print("HELL"))
+def Theme_func():
+    pass
+
+def Explorer_func():
+    pass
+
+def Console_func():
+    pass
+
+create_tile(root, "Тема оформлення", "Змінити колірну схему оформлення", "Налаштувати", Theme_func)
+create_tile(root, "Провідник", "Mica блюр для Windows Explorer", "Ініціалізувати", Explorer_func)
+create_tile(root, "Консоль", "Кастомізувати консоль", "Ініціалізувати", Console_func)
 
 root.mainloop()
