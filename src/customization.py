@@ -30,6 +30,10 @@ class Highlight(Tool):
         self._set_color("Hilight", self.DEFAULT_HILIGHT)
         self._set_color("HotTrackingColor", self.DEFAULT_HOTTRACK)
 
+class ExplorerBlur(Tool):
+    def init(self):
+        self.run_command("src\\progs\\ExplorerBlur\\register.cmd")
+
 class Console(Tool):
     POWERSHELL_PROFILE_PATH = Tool.HOME / "Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
     WINDOWS_TERMINAL_PATH = next(Tool.HOME.glob("AppData/Local/Packages/Microsoft.WindowsTerminal*/LocalState/settings.json"), None)

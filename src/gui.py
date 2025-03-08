@@ -1,6 +1,9 @@
 from multiprocessing import Process
+from tkinter import messagebox
+from CTkColorPicker import *
 from customization import *
 import customtkinter as ctk
+from PIL import ImageColor
 
 Buttons = []
 
@@ -26,19 +29,32 @@ def create_tile(parent, title, description, btn_text, function):
     Buttons[-1].pack(pady=10, padx=10, anchor="e")
 
 def _init_console(): Console().init()
+def _init_explorer(): ExplorerBlur().init()
 
 def Theme_func():
-    pass
+    pick_color = AskColor(title="Вибір кольору")
+
+    hex_color = pick_color.get()
+    rgb_color = ImageColor.getcolor(hex_color, "RGB")
+
+    red = rgb_color[0]
+    green = rgb_color[1]
+    blue = rgb_color[2]
+
+    Highlight().change(red, green, blue)
+    restart = messagebox.askyesno('Question Title', 'Are you sure you want to undo?', parent=root)
 
 def Explorer_func():
-    pass
+    Buttons[2-1].configure(state = 'disabled')
+    p = Process(name="Initialize console", target=_init_explorer)
+    p.start()
 
 def Console_func():
-    Buttons[-1].configure(state = 'disabled')
+    Buttons[3-1].configure(state = 'disabled')
     p = Process(name="Initialize console", target=_init_console)
     p.start()
 
-create_tile(root, "Колір виділення тексту", "Змінити колір виділення тексту", "Налаштувати", Theme_func)
+create_tile(root, "Колір виділення", "Змінити колір виділення", "Налаштувати", Theme_func)
 create_tile(root, "Провідник", "Mica блюр для Windows Explorer", "Ініціалізувати", Explorer_func)
 create_tile(root, "Консоль", "Кастомізувати консоль", "Ініціалізувати", Console_func)
 

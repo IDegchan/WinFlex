@@ -1,1 +1,3 @@
+CTkColorPicker
 customtkinter
+pillow
