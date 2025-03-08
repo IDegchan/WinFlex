@@ -1,4 +1,5 @@
 from pathlib import Path
+from multiprocessing import Process
 import subprocess
 import winreg
 
@@ -34,10 +35,6 @@ class Console(Tool):
     POWERSHELL_PROFILE_PATH = Tool.HOME / "Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
     WINDOWS_TERMINAL_PATH = next(Tool.HOME.glob("AppData/Local/Packages/Microsoft.WindowsTerminal*/LocalState/settings.json"), None)
 
-    def __init__(self):
-        with open(self.POWERSHELL_PROFILE_PATH) as file:
-            print(file.read())
-    
     def init(self):
         self.run_command("Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser")
         self.run_command("winget install --id Microsoft.Powershell --source winget")

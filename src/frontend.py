@@ -1,5 +1,5 @@
+from customization import *
 import customtkinter as ctk
-from backend import *
 
 Buttons = []
 
@@ -31,7 +31,11 @@ def Explorer_func():
     pass
 
 def Console_func():
+    Buttons[-1].configure(text="...")
     Console().init()
+    print(Buttons[-1]._text)
+    Buttons[-1].configure(text="Ініціалізувати")
+    Buttons[-1].configure(state="Disabled")
 
 create_tile(root, "Тема оформлення", "Змінити колірну схему оформлення", "Налаштувати", Theme_func)
 create_tile(root, "Провідник", "Mica блюр для Windows Explorer", "Ініціалізувати", Explorer_func)
