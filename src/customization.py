@@ -1,6 +1,6 @@
 from pathlib import Path
+import subprocess
 import winreg
-import os
 
 class Tool:
     HOME = Path.home()
@@ -8,7 +8,7 @@ class Tool:
 
     @staticmethod
     def run_command(command: str):
-        os.system(command)
+        subprocess.run(["powershell", "-Command", command], capture_output=True)
 
 class Highlight(Tool):
     DEFAULT_HILIGHT = "0 120 215"
@@ -35,7 +35,7 @@ class Console(Tool):
     WINDOWS_TERMINAL_PATH = next(Tool.HOME.glob("AppData/Local/Packages/Microsoft.WindowsTerminal*/LocalState/settings.json"), None)
 
     def __init__(self):
-        with open(self.POWERSHELLPROFILEPATH) as file:
+        with open(self.POWERSHELL_PROFILE_PATH) as file:
             print(file.read())
     
     def init(self):

@@ -31,7 +31,7 @@ def Explorer_func():
     pass
 
 def Console_func():
-    pass
+    Console().init()
 
 create_tile(root, "Тема оформлення", "Змінити колірну схему оформлення", "Налаштувати", Theme_func)
 create_tile(root, "Провідник", "Mica блюр для Windows Explorer", "Ініціалізувати", Explorer_func)
