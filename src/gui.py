@@ -4,6 +4,7 @@ from CTkColorPicker import *
 from customization import *
 import customtkinter as ctk
 from PIL import ImageColor
+import os
 
 Buttons = []
 
@@ -42,7 +43,11 @@ def Theme_func():
     blue = rgb_color[2]
 
     Highlight().change(red, green, blue)
-    restart = messagebox.askyesno('Question Title', 'Are you sure you want to undo?', parent=root)
+
+    restart = messagebox.askyesno('Перезапустити ПК?', 'Чи ти хочеш перезапустити ПК зараз?', parent=root)
+
+    if restart:
+        os.system("shutdown -r -t 0")
 
 def Explorer_func():
     Buttons[2-1].configure(state = 'disabled')

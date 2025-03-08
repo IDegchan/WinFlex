@@ -40,6 +40,7 @@ class Console(Tool):
 
     def init(self):
         self.run_command("Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser")
+        self.run_command("winget install --id Microsoft.WindowsTerminal -e")
         self.run_command("winget install --id Microsoft.Powershell --source winget")
         self.run_command("irm get.scoop.sh | iex")
         self.run_command("scoop install winfetch")
