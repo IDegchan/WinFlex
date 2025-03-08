@@ -43,7 +43,3 @@ class Console(Tool):
         self.run_command("winget install --id Microsoft.Powershell --source winget")
         self.run_command("irm get.scoop.sh | iex")
         self.run_command("scoop install winfetch")
-
-if __name__ == "__main__":
-    #Highlight()
-    Console()
